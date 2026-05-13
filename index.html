@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focsy - Space Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars-bg"></div>
+    <div class="app-container">
+        <!-- Header (Login Dibuang) -->
+        <header class="top-nav">
+            <div class="logo">
+                <span class="planet-icon">🪐</span> focsy
+            </div>
+            <div class="title">Pomodoro Timer</div>
+            <div></div> <!-- Spacer -->
+        </header>
+
+        <!-- Sub Nav & Toolbar -->
+        <div class="sub-nav">
+            <span class="breadcrumbs">Tools > Pomodoro Timer</span>
+        </div>
+        
+        <div class="toolbar">
+            <div class="theme-toggle">
+                <button class="toggle-btn sun">☀️</button>
+                <button class="toggle-btn moon active">🌙</button>
+            </div>
+            <div class="note-container">
+                <input type="text" id="note-input" placeholder="✏️ Add note..." autocomplete="off">
+            </div>
+        </div>
+
+        <!-- Main Timer Area -->
+        <main class="timer-main">
+            <div class="session-tracker" id="tracker">
+                <span class="rocket inactive">🚀</span>
+                <span class="rocket inactive">🚀</span>
+                <span class="rocket inactive">🚀</span>
+                <span class="rocket inactive">🚀</span>
+            </div>
+            
+            <h1 class="time-display" id="time-display">25:00</h1>
+            
+            <div class="timer-controls">
+                <button class="action-btn" id="main-btn">Start</button>
+                <button class="reset-btn" id="reset-btn">Reset Timer</button>
+            </div>
+        </main>
+
+        <!-- Mode Selectors -->
+        <footer class="mode-selector">
+            <div class="mode-card active" data-mode="focus" data-time="25">
+                <div class="card-info">
+                    <span class="mode-title">Focus</span>
+                    <span class="mode-time">25 min</span>
+                </div>
+                <span class="mode-icon">🎯</span>
+            </div>
+            
+            <div class="mode-card" data-mode="short" data-time="5">
+                <div class="card-info">
+                    <span class="mode-title">Short break</span>
+                    <span class="mode-time">5 min</span>
+                </div>
+                <span class="mode-icon">⏳</span>
+            </div>
+            
+            <div class="mode-card" data-mode="long" data-time="30">
+                <div class="card-info">
+                    <span class="mode-title">Long break</span>
+                    <span class="mode-time">30 min</span>
+                </div>
+                <span class="mode-icon">⌛</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
