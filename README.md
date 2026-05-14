@@ -1,4 +1,4 @@
-# Commitodoro — Neon Focus Timer
+# Commitodoro—Focus
 
 Commitodoro adalah aplikasi Pomodoro Timer modern dengan tampilan neon cyberpunk futuristik untuk membantu meningkatkan fokus dan produktivitas.
 
@@ -69,7 +69,8 @@ commitodoro/
 ├── index.html
 ├── style.css
 ├── script.js
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
@@ -88,4 +89,4 @@ commitodoro/
 
 ## 📄 License
 
-MIT License © 2026
+MIT License © 2026 M. Aziep Musafira
