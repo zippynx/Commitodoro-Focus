@@ -1,84 +1,204 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Focsy - Space Edition</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#04040f" />
+
+  <title>Commitodoro — Focus Timer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <div class="stars-bg"></div>
-    <div class="app-container">
-        <!-- Header (Login Dibuang) -->
-        <header class="top-nav">
-            <div class="logo">
-                <span class="planet-icon">🪐</span> focsy
-            </div>
-            <div class="title">Pomodoro Timer</div>
-            <div></div> <!-- Spacer -->
-        </header>
 
-        <!-- Sub Nav & Toolbar -->
-        <div class="sub-nav">
-            <span class="breadcrumbs">Tools > Pomodoro Timer</span>
+  <div class="scanlines"></div>
+  <div class="grid-bg"></div>
+  <div class="glow-orb glow-orb--1"></div>
+  <div class="glow-orb glow-orb--2"></div>
+
+  <div class="app">
+
+    <header class="header">
+      <div class="logo">
+        <span class="logo__icon">◈</span>
+        <span class="logo__text">COMMITODORO</span>
+        <span class="logo__badge">FOCUS</span>
+      </div>
+
+      <div class="header__center">Pomodoro Timer</div>
+
+      <div class="session-dots" id="sessionDots">
+        <span class="dot" data-idx="0"></span>
+        <span class="dot" data-idx="1"></span>
+        <span class="dot" data-idx="2"></span>
+        <span class="dot" data-idx="3"></span>
+      </div>
+    </header>
+
+    <nav class="mode-tabs">
+      <button class="mode-tab active" data-mode="focus" data-minutes="25">
+        <span class="mode-tab__icon">◉</span> Fokus
+      </button>
+
+      <button class="mode-tab" data-mode="short" data-minutes="5">
+        <span class="mode-tab__icon">◎</span> Istirahat Singkat
+      </button>
+
+      <button class="mode-tab" data-mode="long" data-minutes="30">
+        <span class="mode-tab__icon">○</span> Istirahat Panjang
+      </button>
+    </nav>
+
+    <main class="timer-card">
+
+      <div class="session-label" id="sessionLabel">SESI FOKUS</div>
+
+      <div class="session-num" id="sessionNum">#1</div>
+
+      <div class="digits">
+        <div class="digit-block" id="minTens">
+          <span class="digit-val" id="minTensVal">2</span>
         </div>
-        
-        <div class="toolbar">
-            <div class="theme-toggle">
-                <button class="toggle-btn sun">☀️</button>
-                <button class="toggle-btn moon active">🌙</button>
-            </div>
-            <div class="note-container">
-                <input type="text" id="note-input" placeholder="✏️ Add note..." autocomplete="off">
-            </div>
+
+        <div class="digit-block" id="minOnes">
+          <span class="digit-val" id="minOnesVal">5</span>
         </div>
 
-        <!-- Main Timer Area -->
-        <main class="timer-main">
-            <div class="session-tracker" id="tracker">
-                <span class="rocket inactive">🚀</span>
-                <span class="rocket inactive">🚀</span>
-                <span class="rocket inactive">🚀</span>
-                <span class="rocket inactive">🚀</span>
-            </div>
-            
-            <h1 class="time-display" id="time-display">25:00</h1>
-            
-            <div class="timer-controls">
-                <button class="action-btn" id="main-btn">Start</button>
-                <button class="reset-btn" id="reset-btn">Reset Timer</button>
-            </div>
-        </main>
+        <div class="colon">
+          <span class="colon-dot"></span>
+          <span class="colon-dot"></span>
+        </div>
 
-        <!-- Mode Selectors -->
-        <footer class="mode-selector">
-            <div class="mode-card active" data-mode="focus" data-time="25">
-                <div class="card-info">
-                    <span class="mode-title">Focus</span>
-                    <span class="mode-time">25 min</span>
-                </div>
-                <span class="mode-icon">🎯</span>
-            </div>
-            
-            <div class="mode-card" data-mode="short" data-time="5">
-                <div class="card-info">
-                    <span class="mode-title">Short break</span>
-                    <span class="mode-time">5 min</span>
-                </div>
-                <span class="mode-icon">⏳</span>
-            </div>
-            
-            <div class="mode-card" data-mode="long" data-time="30">
-                <div class="card-info">
-                    <span class="mode-title">Long break</span>
-                    <span class="mode-time">30 min</span>
-                </div>
-                <span class="mode-icon">⌛</span>
-            </div>
-        </footer>
-    </div>
+        <div class="digit-block" id="secTens">
+          <span class="digit-val" id="secTensVal">0</span>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="digit-block" id="secOnes">
+          <span class="digit-val" id="secOnesVal">0</span>
+        </div>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+        <div class="progress-glow" id="progressGlow"></div>
+      </div>
+
+      <div class="session-info" id="sessionInfo">
+        Waktu untuk fokus!
+      </div>
+
+      <div class="session-stats" id="sessionStats">
+        Hari ini:
+        <strong id="todayCount">0</strong>
+        selesai &middot;
+        <strong id="todayMinutes">0.0</strong>
+        menit fokus
+      </div>
+
+      <div class="controls">
+
+        <button
+          class="ctrl-btn ctrl-btn--secondary"
+          id="resetBtn"
+          title="Reset"
+          aria-label="Reset timer"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="1 4 1 10 7 10" />
+            <path d="M3.51 15a9 9 0 1 0 .49-4.73" />
+          </svg>
+        </button>
+
+        <button
+          class="ctrl-btn ctrl-btn--primary"
+          id="mainBtn"
+          aria-label="Mulai atau pause timer"
+        >
+          <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5,3 19,12 5,21" />
+          </svg>
+
+          <svg class="icon-pause hidden" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16" rx="1" />
+            <rect x="14" y="4" width="4" height="16" rx="1" />
+          </svg>
+        </button>
+
+        <button
+          class="ctrl-btn ctrl-btn--accent"
+          id="skipBtn"
+          title="Lewati"
+          aria-label="Lewati sesi"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5,4 15,12 5,20" />
+            <rect x="16" y="4" width="3" height="16" rx="1" />
+          </svg>
+        </button>
+
+      </div>
+
+    </main>
+
+    <section class="task-section">
+
+      <div class="task-header">
+        <div class="task-title">
+          <span class="task-title__icon">≡</span> Tugas
+        </div>
+
+        <button class="task-clear-btn" id="clearDoneBtn">
+          ✕ Hapus Selesai
+        </button>
+      </div>
+
+      <div class="task-input-row">
+        <input
+          type="text"
+          id="taskInput"
+          class="task-input"
+          placeholder="Tambahkan tugas baru..."
+          maxlength="80"
+          autocomplete="off"
+        />
+
+        <button class="task-add-btn" id="addTaskBtn">
+          Tambah
+        </button>
+      </div>
+
+      <ul class="task-list" id="taskList"></ul>
+
+      <p class="task-empty" id="taskEmpty">
+        Belum ada tugas. Tambahkan di atas ☝️
+      </p>
+
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
