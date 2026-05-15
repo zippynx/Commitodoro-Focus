@@ -1,19 +1,23 @@
-# Commitodoro—Focus
+# Commitodoro — Timer
 
 Commitodoro adalah aplikasi Pomodoro Timer modern dengan tampilan neon cyberpunk futuristik untuk membantu meningkatkan fokus dan produktivitas.
+
+---
 
 ## ✨ Features
 
 - Neon cyberpunk UI
 - Focus / Short Break / Long Break mode
-- Session tracker
 - Animated digital timer
-- Keyboard shortcut (Space)
-- Task management
+- Session tracker
+- Keyboard shortcut support
 - Daily focus statistics
-- Responsive layout
+- Task management system
 - Sound notification
+- Responsive mobile layout
 - LocalStorage persistence
+- Dynamic accent color switching
+- Futuristic glassmorphism design
 
 ---
 
@@ -28,17 +32,20 @@ Commitodoro adalah aplikasi Pomodoro Timer modern dengan tampilan neon cyberpunk
 ## 🎨 UI Highlights
 
 - Glow neon effects
-- Animated background
+- Animated background grid
+- Floating glow orbs
 - Glassmorphism inspired cards
 - Orbitron futuristic typography
-- Dynamic accent color switching
+- Dynamic timer animations
+- Smooth UI transitions
+- Cyberpunk inspired interface
 
 ---
 
-## ⌨ Shortcuts
+## ⌨ Keyboard Shortcuts
 
 | Key | Action |
-|-----|--------|
+|------|--------|
 | Space | Start / Pause timer |
 
 ---
@@ -48,29 +55,36 @@ Commitodoro adalah aplikasi Pomodoro Timer modern dengan tampilan neon cyberpunk
 Clone repository:
 
 ```bash
-git clone https://github.com/yourusername/commitodoro.git
+git clone https://github.com/ZippyNx/commitodoro.git
 ```
 
-Open:
+Open project:
 
 ```bash
 index.html
 ```
 
-No dependencies required.
+No dependencies or build tools required.
 
 ---
 
 ## 📁 Project Structure
 
 ```txt
-commitodoro/
+Commitodoro-Timer/
+│
+├── assets/
+│   └── favicon/
+│       ├── apple-touch-icon.png
+│       ├── favicon-32x32.png
+│       ├── favicon.ico
+│       └── site.webmanifest
 │
 ├── index.html
-├── style.css
-├── script.js
+├── LICENSE
 ├── README.md
-└── LICENSE
+├── script.js
+└── style.css
 ```
 
 ---
@@ -80,13 +94,14 @@ commitodoro/
 - Browser notifications
 - Focus analytics chart
 - Theme customization
-- Ambient music
+- Ambient background music
 - PWA support
-- Cloud sync
+- Cloud synchronization
 - Custom timer presets
+- Productivity streak system
 
 ---
 
 ## 📄 License
 
-MIT License © 2026 M. Aziep Musafira
+MIT License © M. Aziep Musafira 2026
